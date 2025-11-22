@@ -12,6 +12,10 @@ public class Map
     public IArea? GetArea(int x, int y)
     {
         _areas.TryGetValue((x, y), out var area);
+        if (area == null)
+        {
+            Console.WriteLine("This is uncharted territory. Try a different direction.");
+        }
         return area;
     }
 
