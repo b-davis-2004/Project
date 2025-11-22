@@ -1,0 +1,31 @@
+namespace Project
+{
+    public class Puzzle1 : IPuzzle
+    {
+        public string Name => "Ancient Riddle";
+        public string Description => "Solve the ancient riddle to proceed. What has hands but cannot clap?";
+
+        public bool IsResolved { get; set; } = false;
+
+        public bool Resolve(Player player)
+        {
+            Console.Write("Enter your answer: ");
+            string? answer = Console.ReadLine()?.Trim().ToLower();
+
+            if (answer == "clock")
+            {
+                IsResolved = true;
+                Console.WriteLine("Correct! You have solved the puzzle.");
+                return true;
+            }
+
+            Console.WriteLine("Incorrect answer. Try again.");
+            return false;
+        }
+    }
+}
+
+
+// Concrete puzzle class implementing IPuzzle interface
+// Represents a specific puzzle with its own properties and solving logic
+// Includes properties for Name, Description, and IsResolved status
