@@ -20,14 +20,13 @@ Console.WriteLine("Use N/W/S/E to move North, West, South, or East. Type 'QUIT' 
 
 while (player.Health > 0)
 {
-    //world.DescribeLocation(player); - was duplicating area description
-
     var currentArea = world.GetArea(player.X, player.Y);
     if (currentArea != null)
     {
         currentArea.Enter(player);
     }
-
+    
+    //handles player death
     if (player.Health <= 0)
     {
         Console.WriteLine("You have fallen in battle. Game Over.");
