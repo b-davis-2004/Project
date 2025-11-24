@@ -2,8 +2,12 @@ using System;
 
 namespace Project.ConcreteAreas;
 
-public class OriginPoint //: AreaBase
+public class OriginPoint : AreaBase
 {
+    public override string Name => "Origin Point";
+    public override string Description => "This is the starting point of your adventure, a place of beginnings and endless possibilities.";
+    public override int X => 0;
+    public override int Y => 0;
 
 }
 

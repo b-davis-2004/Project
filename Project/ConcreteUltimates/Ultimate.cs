@@ -23,7 +23,7 @@ public class Ultimate : IEnemy, IPuzzle
     }
 
     public string Description => "Solve the ancient riddle to proceed. What has hands but cannot clap?";
-     public bool IsResolved { get; set; } = false;
+    public bool IsResolved { get; set; } = false;
 
     public bool Resolve(Player player)
     {

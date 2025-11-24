@@ -5,7 +5,10 @@ public abstract class AreaBase : IArea
     public abstract string Name { get; }
     public abstract string Description { get; }
 
-    public required IConflict Conflict { get; set; }
+    public abstract int X { get; }
+    public abstract int Y { get; }
+
+    public IConflict? Conflict { get; set; }
 
     public virtual void Enter(Player player)
     {

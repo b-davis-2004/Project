@@ -1,14 +1,19 @@
 using Project;
+using Project.ConcreteAreas;
+
 
 Player player = new Player();
-Map world = new Map();
+Map world = new Map(5,5);
 
 // Define map layout
 // Uses Concreate Area and Conflict implementations
-//Might be better to define coordinates outside of main program
-world.AddArea(0, 0, new Forest{ Conflict = new CombatConflict(new Dryad()) });
-world.AddArea(1, 0, new BanditCamp { Conflict = new CombatConflict(new BanditLeader()) });    // East +1
-world.AddArea(2, 0, new MountainPass { Conflict = new PuzzleConflict(new Puzzle1()) }); // East +2
+
+world.AddArea(new Forest());
+world.AddArea(new BanditCamp());
+world.AddArea(new TriggerWinArea());
+world.AddArea(new OriginPoint());
+world.AddArea(new MountainPass());
+
 
 Console.WriteLine("Welcome, adventurer!");
 Console.WriteLine("Use N/W/S/E to move North, West, South, or East. Type 'QUIT' to exit.\n");

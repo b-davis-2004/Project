@@ -4,11 +4,17 @@ public class Map
 {
     private readonly Dictionary<(int x, int y), IArea> _areas = new();
 
-    public void AddArea(int x, int y, IArea area)
+    private IArea[,] grid;
+
+    public Map(int width, int height)
     {
-        _areas[(x, y)] = area;
+        grid = new IArea[width, height];
     }
 
+    public void AddArea(IArea area)
+    {
+        grid[area.X, area.Y] = area;
+    }
     public IArea? GetArea(int x, int y)
     {
         _areas.TryGetValue((x, y), out var area);
@@ -20,4 +26,5 @@ public class Map
     }
 
 }
+
 

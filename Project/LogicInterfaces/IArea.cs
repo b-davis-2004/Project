@@ -4,7 +4,11 @@ public interface IArea
 {
     string Name { get; }
     string Description { get; }
-    IConflict Conflict { get; set; }
+
+    int X { get; }
+    int Y { get; }
+
+    IConflict? Conflict { get;  }
 
     void Enter(Player player);
 }
