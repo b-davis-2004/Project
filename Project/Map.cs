@@ -2,9 +2,7 @@ namespace Project;
 
 public class Map
 {
-    private readonly Dictionary<(int x, int y), IArea> _areas = new();
-
-    private IArea[,] grid;
+    private readonly IArea[,] grid;
 
     public Map(int width, int height)
     {
@@ -15,16 +13,16 @@ public class Map
     {
         grid[area.X, area.Y] = area;
     }
+
     public IArea? GetArea(int x, int y)
     {
-        _areas.TryGetValue((x, y), out var area);
+        var area = grid[x, y];
         if (area == null)
         {
             Console.WriteLine("This is uncharted territory. Try a different direction.");
         }
         return area;
     }
-
 }
-
-
+//Map class to hold areas in a grid layout
+//Allows adding and retrieving areas based on coordinates
