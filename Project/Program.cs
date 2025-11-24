@@ -3,7 +3,7 @@ using Project.ConcreteAreas;
 
 
 Player player = new Player();
-Map world = new Map(5,5);
+Map world = new Map(3, 3);
 
 // Define map layout
 // Uses Concreate Area and Conflict implementations
