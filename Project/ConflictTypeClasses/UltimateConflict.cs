@@ -1,10 +1,56 @@
 using System;
 
-namespace Project.ConcflictTypeClasses;
+namespace Project;
 
-public class UltimateConflict
+public class UltimateConflict : IConflict
 {
+    public string Description => $"You encounter a hostile {Enemy.Name}!";
+    public bool IsResolved { get; private set; }
+    public IEnemy Enemy { get; private set; }
 
+    public UltimateConflict(IEnemy enemy)
+    {
+        Enemy = enemy;
+        IsResolved = false;
+    }
+
+    public void Resolve(Player player)
+    {
+        Console.WriteLine(Description);
+        while (!Enemy.IsDefeated && player.Health > 0)
+        {
+            Console.WriteLine("Do you want to Attack (A) or Run (R)?");
+            var input = Console.ReadLine()?.ToUpper();
+
+            if (input == "A")
+            {
+                Enemy.TakeDamage(player.AttackPower);
+                if (!Enemy.IsDefeated)
+                {
+                    Enemy.Attack(player);
+                }
+            }
+            else if (input == "R")
+            {
+                Console.WriteLine("You run away!");
+                return;
+            }
+        }
+
+        if (Enemy.IsDefeated)
+        {
+            Console.WriteLine($"You have defeated the {Enemy.Name}!");
+            IsResolved = true;
+        }
+
+        if (player.Health <= 0)
+        {
+            Console.WriteLine("You have been defeated...");
+            // handle death
+        }
+    }
 }
 
-//ultimate logic that combines enemy and puzzle logics
+    //currently running using identical setup to combat conflict
+    // ultimate conflict that involves both puzzle and enemy will need to be implemented
+    // may require changes to IConflict interface
