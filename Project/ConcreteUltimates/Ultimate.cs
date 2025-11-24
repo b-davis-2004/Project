@@ -2,7 +2,7 @@ using System;
 
 namespace Project.ConcreteUltimates;
 
-public class Ultimate : IEnemy
+public class Ultimate : IEnemy, IPuzzle
 {
     public string Name => "Ultimate Foe";
     public int Health { get; set; } = 30;
@@ -20,6 +20,25 @@ public class Ultimate : IEnemy
     {
         Health -= damage;
         Console.WriteLine($"{Name} takes {damage} damage!");
+    }
+
+    public string Description => "Solve the ancient riddle to proceed. What has hands but cannot clap?";
+     public bool IsResolved { get; set; } = false;
+
+    public bool Resolve(Player player)
+    {
+        Console.Write("Enter your answer: ");
+        string? answer = Console.ReadLine()?.Trim().ToLower();
+
+        if (answer == "clock")
+        {
+            IsResolved = true;
+            Console.WriteLine("Correct! You have solved the puzzle.");
+            return true;
+        }
+
+        Console.WriteLine("Incorrect answer. Try again.");
+        return false;
     }
 }
 
