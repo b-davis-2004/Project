@@ -1,6 +1,6 @@
 using System;
 
-namespace Project.ConcreteAreas;
+namespace Project;
 
 public class OriginPoint : AreaBase
 {
