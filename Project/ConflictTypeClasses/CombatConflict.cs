@@ -44,6 +44,8 @@ public class CombatConflict : IConflict
         if (player.Health <= 0)
         {
             Console.WriteLine("You have been defeated...");
+            Console.WriteLine("Game Over.");
+            Environment.Exit(0); // Exit the game if player dies
             // handle death
         }
     }

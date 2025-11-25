@@ -1,33 +1,41 @@
-using System;
-
-namespace Project;
+using Project;
 
 public class UltimateConflict : IConflict
 {
-    public string Description => $"You encounter a hostile {Enemy.Name}!";
+    public string Description => $"You encounter a hostile {Ultimate.Name}!";
     public bool IsResolved { get; private set; }
-    public IEnemy Enemy { get; private set; }
+    public IUltimate Ultimate { get; private set; }
 
-    public UltimateConflict(IEnemy enemy)
+    public UltimateConflict(IUltimate ultimate)
     {
-        Enemy = enemy;
+        Ultimate = ultimate;
         IsResolved = false;
     }
 
     public void Resolve(Player player)
     {
         Console.WriteLine(Description);
-        while (!Enemy.IsDefeated && player.Health > 0)
+
+        // Puzzle step
+        if (!Ultimate.IsResolved)
+        {
+            Console.WriteLine("Before combat begins, you must solve the puzzle...");
+            Ultimate.Resolve(player);
+        }
+
+        // Combat loop
+        while (!Ultimate.IsDefeated && player.Health > 0)
         {
             Console.WriteLine("Do you want to Attack (A) or Run (R)?");
             var input = Console.ReadLine()?.ToUpper();
 
             if (input == "A")
             {
-                Enemy.TakeDamage(player.AttackPower);
-                if (!Enemy.IsDefeated)
+                Ultimate.TakeDamage(player.AttackPower);
+
+                if (!Ultimate.IsDefeated)
                 {
-                    Enemy.Attack(player);
+                    Ultimate.Attack(player);
                 }
             }
             else if (input == "R")
@@ -37,20 +45,20 @@ public class UltimateConflict : IConflict
             }
         }
 
-        if (Enemy.IsDefeated)
+        // End conditions
+        if (Ultimate.IsDefeated)
         {
-            Console.WriteLine($"You have defeated the {Enemy.Name}!");
+            Console.WriteLine($"You have defeated the {Ultimate.Name}!");
+            Console.WriteLine("The darkness fades... You are victorious!");
             IsResolved = true;
+            Environment.Exit(0);
         }
 
         if (player.Health <= 0)
         {
             Console.WriteLine("You have been defeated...");
-            // handle death
+            Console.WriteLine("Game Over.");
+            Environment.Exit(0);
         }
     }
 }
-
-    //currently running using identical setup to combat conflict
-    // ultimate conflict that involves both puzzle and enemy will need to be implemented
-    // may require changes to IConflict interface

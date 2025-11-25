@@ -1,6 +1,4 @@
 
-using Project.ConcreteUltimates;
-
 namespace Project
 {
     public class TriggerWinArea : AreaBase
@@ -13,7 +11,7 @@ namespace Project
 
         public TriggerWinArea()
         {
-            Conflict = new UltimateConflict(new Ultimate());
+            Conflict = new UltimateConflict(new Ultimate1());
         }
     }
 }
