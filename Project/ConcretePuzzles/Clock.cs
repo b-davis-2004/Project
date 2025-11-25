@@ -1,6 +1,6 @@
 namespace Project
 {
-    public class Puzzle1 : IPuzzle
+    public class Clock : IPuzzle
     {
         public string Name => "Ancient Riddle";
         public string Description => "Solve the ancient riddle to proceed. What has hands but cannot clap?";

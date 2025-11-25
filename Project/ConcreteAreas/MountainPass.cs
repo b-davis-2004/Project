@@ -11,7 +11,7 @@ namespace Project
         
         public MountainPass()
         {
-            Conflict = new PuzzleConflict(new Puzzle1());
+            Conflict = new PuzzleConflict(new Clock());
         }
     }
 
