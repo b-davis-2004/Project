@@ -31,6 +31,8 @@ public class CombatConflict : IConflict
             else if (input == "R")
             {
                 Console.WriteLine("You run away!");
+                player.Health -= 5; //penalty for running away
+                Console.WriteLine($"You exhausted yourself while running. Your health is now {player.Health}.");
                 return;
             }
         }
