@@ -1,6 +1,6 @@
 namespace Project;
 
-public class Ultimate1 : IUltimate
+public class Boss : IUltimate
 {
     public string Description => "A Wraith has appeared, a powerful foe - draining life and chilling the soul." +
         "It's growling presence fills the air with dread, and its eyes burn with an otherworldly fire." + "It does not attack yet." + "Instead, it challenges you to solve a riddle: " +

@@ -11,7 +11,7 @@ namespace Project
 
         public TriggerWinArea()
         {
-            Conflict = new UltimateConflict(new Ultimate1());
+            Conflict = new UltimateConflict(new Boss());
         }
     }
 }
