@@ -32,11 +32,14 @@ while (player.Health > 0)
         break;
     }
 
+    // prompts user choice for movement
     Console.Write("\nWhere do you want to go (N/W/S/E)? ");
     string? input = Console.ReadLine()?.Trim().ToUpper();
 
+    // allows player to quit the game with input
     if (input == "QUIT") break;
 
+    // handles player movement based on input
     switch (input)
     {
         case "N": player.Y += 1; break;
