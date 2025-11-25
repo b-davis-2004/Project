@@ -12,6 +12,7 @@ world.AddArea(new BanditCamp());
 world.AddArea(new TriggerWinArea());
 world.AddArea(new OriginPoint());
 world.AddArea(new MountainPass());
+world.AddArea(new CultArea());
 
 
 Console.WriteLine("Welcome, adventurer!");
