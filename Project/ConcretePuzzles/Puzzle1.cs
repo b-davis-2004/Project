@@ -16,6 +16,8 @@ namespace Project
             {
                 IsResolved = true;
                 Console.WriteLine("Correct! You have solved the puzzle.");
+                player.Health += 5; // Reward player with health
+                Console.WriteLine($"Your health is now: {player.Health}");
                 return true;
             }
 
