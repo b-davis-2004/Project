@@ -2,7 +2,7 @@ namespace Project;
 
 public class Cultist : IEnemy
 {
-    public string Name => "Cultist";
+    public string Name => "A disturbed cultist";
     public int Health { get; set; } = 10;
     public int AttackPower => 2;
 
