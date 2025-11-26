@@ -6,8 +6,8 @@ namespace Project
         public override string Name => "Mountain Pass";
         public override string Description => "This is the treacherous mountain pass, with steep cliffs and howling winds. You can hear water running down hill in the distance.";
 
-        public override int X => 2;
-        public override int Y =>  0;
+        public override int X => 0;
+        public override int Y => 1;
         
         public MountainPass()
         {

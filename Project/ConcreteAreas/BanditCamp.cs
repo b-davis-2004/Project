@@ -5,7 +5,7 @@ namespace Project
         public override string Name => "Bandit Camp";
         public override string Description => "This is the notorious bandit camp, filled with dangerous outlaws and hidden traps.";
 
-        public override int X => 3;
+        public override int X => -1;
         public override int Y =>  0;
 
         public BanditCamp()
