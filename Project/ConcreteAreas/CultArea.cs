@@ -6,7 +6,7 @@ namespace Project
         public override string Description => "xyz";
 
         public override int X => 1;
-        public override int Y =>  1;
+        public override int Y =>  2;
         
         public CultArea()
         {
