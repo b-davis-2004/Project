@@ -11,12 +11,18 @@ public class Map
 
     public void AddArea(IArea area)
     {
-        grid[area.X, area.Y] = area;
+        int xIndex = area.X + 1; // shift -1..1 → 0..2
+        int yIndex = area.Y + 1;
+
+        grid[xIndex, yIndex] = area;
     }
 
     public IArea? GetArea(int x, int y)
     {
-        var area = grid[x, y];
+        int xIndex = x + 1;
+        int yIndex = y + 1;
+
+        var area = grid[xIndex, yIndex];
         if (area == null)
         {
             Console.WriteLine("This is uncharted territory. Try a different direction.");
