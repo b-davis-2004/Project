@@ -11,7 +11,7 @@ namespace Project
         
         public Valley()
         {
-          //Conflict = new PuzzleConflict(new River());
+            Conflict = new PuzzleConflict(new Echo());
         }
     }
 
