@@ -9,7 +9,7 @@ Map world = new Map(3, 3);
 
 world.AddArea(new Forest());
 world.AddArea(new BanditCamp());
-world.AddArea(new TriggerWinArea());
+world.AddArea(new BossLevel());
 world.AddArea(new OriginPoint());
 world.AddArea(new MountainPass());
 world.AddArea(new CultArea());
