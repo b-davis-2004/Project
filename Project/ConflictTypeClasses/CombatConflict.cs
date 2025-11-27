@@ -3,6 +3,7 @@ namespace Project;
 public class CombatConflict : IConflict
 {
     public string Description => $"You encounter a hostile {Enemy.Name}!";
+    public string Ask { get; private set; } = string.Empty;
     public bool IsResolved { get; private set; }
     public IEnemy Enemy { get; private set; }
 

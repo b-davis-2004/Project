@@ -2,7 +2,9 @@ namespace Project;
 
 public class PuzzleConflict : IConflict
 {
+
     public string Description => $"You are face with a(n) {Puzzle.Name}!";
+    public string Ask => $"{Puzzle.Description}";
     public bool IsResolved { get; private set; }
     public IPuzzle Puzzle { get; private set; }
 
@@ -14,7 +16,7 @@ public class PuzzleConflict : IConflict
 
     public void Resolve(Player player)
     {
-        Console.WriteLine(Description);
+        Console.WriteLine(Description, Ask);
         while (!IsResolved)
         {
             if (Puzzle.Resolve(player))
