@@ -1,10 +1,14 @@
+using System.Security.Cryptography;
+
 namespace Project;
 
 public class BanditLeader : IEnemy
 {
     public string Name => "Bandit Leader";
     public int Health { get; set; } = 25;
-    public int AttackPower => 5;
+    private static readonly Random random = new Random();
+
+    public int AttackPower => random.Next(0, 6);
 
     public bool IsDefeated => Health <= 0;
 

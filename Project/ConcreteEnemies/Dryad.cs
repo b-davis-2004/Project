@@ -4,7 +4,10 @@ public class Dryad : IEnemy
 {
     public string Name => "Dryad";
     public int Health { get; set; } = 30;
-    public int AttackPower => 10;
+
+    private static readonly Random random = new Random();
+
+    public int AttackPower => random.Next(0, 11);
 
     public bool IsDefeated => Health <= 0;
 

@@ -30,7 +30,10 @@ public class Boss : IUltimate
     }
     public string Name => "Wraith";
     public int Health { get; set; } = 50;
-    public int AttackPower => 15;
+
+    private static readonly Random random = new Random();
+
+    public int AttackPower => random.Next(4, 21);
 
     public bool IsDefeated => Health <= 0;
 

@@ -4,7 +4,10 @@ public class Cultist : IEnemy
 {
     public string Name => "A disturbed cultist";
     public int Health { get; set; } = 10;
-    public int AttackPower => 2;
+
+    private static readonly Random random = new Random();
+
+    public int AttackPower => random.Next(0, 3);
 
     public bool IsDefeated => Health <= 0;
 
