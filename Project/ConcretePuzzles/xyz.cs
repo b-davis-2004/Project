@@ -1,9 +1,9 @@
 namespace Project
 {
-    public class xyz : IPuzzle
+    public class Sheep : IPuzzle
     {
-        public string Name => "Whispering Wind";
-        public string Description => "Solve the the riddle whispered on the wind to proceed. What runs but never walks, has a mouth but never talks, has a bed but never sleeps?";
+        public string Name => "A Mumbling Meadow";
+        public string Description => "Solve the the riddle mumbled by the meadow to proceed. A shepherd had 17 sheep. All but nine perished in the storm. How many remain?";
 
         public bool IsResolved { get; set; } = false;
 
@@ -12,7 +12,7 @@ namespace Project
             Console.Write("Enter your answer: ");
             string? answer = Console.ReadLine()?.Trim().ToLower();
 
-            if (answer == "river")
+            if (answer == "nine")
             {
                 IsResolved = true;
                 Console.WriteLine("Correct! You have solved the puzzle.");

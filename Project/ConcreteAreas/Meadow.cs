@@ -11,7 +11,7 @@ namespace Project
         
         public Meadow()
         {
-            Conflict = new PuzzleConflict(new xyz());
+            Conflict = new PuzzleConflict(new Sheep());
         }
     }
 
