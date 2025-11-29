@@ -8,7 +8,7 @@ public abstract class AreaBase : IArea
     public abstract int X { get; }
     public abstract int Y { get; }
 
-    public IConflict? Conflict { get; set; }
+    public IConflict? Conflict { get; set; } // nullable so conflict not required for origin area
 
     public virtual void Enter(Player player)
     {
@@ -21,8 +21,6 @@ public abstract class AreaBase : IArea
         }
     }
 }
-
-// public required might break stuff - keep an eye on it plzzzz
 
 //Abstract Class that will minimize the repeat of area introduction method and conflict/resolution intialisation
 //will run specific area classes through this abstract class, then will run this through IArea interface
