@@ -12,7 +12,7 @@ public abstract class AreaBase : IArea
 
     public virtual void Enter(Player player)
     {
-        Console.WriteLine($"You enter the {Name}.");
+        Console.WriteLine($"You enter a {Name}.");
         Console.WriteLine(Description);
 
         if (Conflict != null && !Conflict.IsResolved)
