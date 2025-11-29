@@ -3,7 +3,6 @@ namespace Project;
 public interface IConflict
 {
     string Description { get; }
-    string Ask { get; }
     void Resolve(Player player);
     bool IsResolved { get; }
 }
