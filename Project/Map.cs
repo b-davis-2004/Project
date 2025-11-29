@@ -22,12 +22,21 @@ public class Map
         int xIndex = x + 1;
         int yIndex = y + 1;
 
-        var area = grid[xIndex, yIndex];
-        if (area == null)
+        if (!IsInBounds(xIndex, yIndex))
         {
-            Console.WriteLine("This is uncharted territory. Try a different direction.");
+            Console.WriteLine("This is uncharted territory. Try a different direction..");
+            return null;
         }
+
+        var area = grid[xIndex, yIndex];
+        if (area == null){}
         return area;
+    }
+
+    private bool IsInBounds(int x, int y)
+    {
+        return x >= 0 && x < grid.GetLength(0) &&
+               y >= 0 && y < grid.GetLength(1);
     }
 }
 //Map class to hold areas in a grid layout
