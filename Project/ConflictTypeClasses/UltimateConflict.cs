@@ -2,8 +2,7 @@ using Project;
 
 public class UltimateConflict : IConflict
 {
-    public string Description => $"You encounter a hostile {Ultimate.Name}!";
-    public string Ask => $"{Ultimate.Description}";
+    public string Description => $"You encounter a hostile {Ultimate.Name}! {Ultimate.Description}";
     public bool IsResolved { get; private set; }
     public IUltimate Ultimate { get; private set; }
 
