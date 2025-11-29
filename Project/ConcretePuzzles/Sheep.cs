@@ -2,7 +2,7 @@ namespace Project
 {
     public class Sheep : IPuzzle
     {
-        public string Name => "A Mumbling Meadow";
+        public string Name => "Mumbling Meadow";
         public string Description => "\nSolve the the riddle mumbled by the meadow to proceed. \nA shepherd had 17 sheep. \nAll but nine perished in the storm. \nHow many remain?";
 
         public bool IsResolved { get; set; } = false;
