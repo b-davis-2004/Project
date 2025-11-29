@@ -3,11 +3,11 @@ namespace Project
 {
     public class Meadow : AreaBase
     {
-        public override string Name => "Valley Plain";
-        public override string Description => "This is the valley of the mountain.";
+        public override string Name => "Grassy Meadow";
+        public override string Description => "This is a peaceful, unassuming grassy meadow. Take your time to smell the flowers.";
 
-        public override int X => -1;
-        public override int Y => 1;
+        public override int X => 1;
+        public override int Y => 0;
         
         public Meadow()
         {
