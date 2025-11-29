@@ -3,7 +3,7 @@ namespace Project
     public class River : IPuzzle
     {
         public string Name => "Whispering Wind";
-        public string Description => "Solve the the riddle whispered on the wind to proceed. What runs but never walks, has a mouth but never talks, has a bed but never sleeps?";
+        public string Description => "\nSolve the the riddle whispered on the wind to proceed. \nWhat runs but never walks, has a mouth but never talks, \nhas a bed but never sleeps?";
 
         public bool IsResolved { get; set; } = false;
 

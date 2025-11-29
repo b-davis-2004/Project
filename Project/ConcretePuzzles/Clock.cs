@@ -3,7 +3,7 @@ namespace Project
     public class Clock : IPuzzle
     {
         public string Name => "Ancient Riddle";
-        public string Description => "Solve the ancient riddle to proceed. What has hands but cannot clap?";
+        public string Description => "\nSolve the ancient riddle to proceed. \nWhat has hands but cannot clap?";
 
         public bool IsResolved { get; set; } = false;
 

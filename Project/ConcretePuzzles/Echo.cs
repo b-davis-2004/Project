@@ -3,7 +3,7 @@ namespace Project
     public class Echo : IPuzzle
     {
         public string Name => "The Valley speaks to you.";
-        public string Description => "Solve the the riddle to proceed. I speak without a mouth and hear without ears. I dwell in the woods, where voices bounce off stone and tree. What am I?";
+        public string Description => "\nSolve the the riddle to proceed. \nI speak without a mouth and hear without ears. \nI dwell in the woods, where voices bounce off stone and tree. \nWhat am I?";
 
         public bool IsResolved { get; set; } = false;
 
