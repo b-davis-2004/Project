@@ -13,6 +13,7 @@ world.AddArea(new BossLevel());
 world.AddArea(new OriginPoint());
 world.AddArea(new MountainPass());
 world.AddArea(new CultArea());
+world.AddArea(new Meadow());
 
 
 Console.WriteLine("Welcome, adventurer!");
