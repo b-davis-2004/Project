@@ -2,6 +2,7 @@ namespace Project;
 
 public class Map
 {
+    //creating grid for coordinate movement system
     private readonly IArea[,] grid;
 
     public Map(int width, int height)
@@ -17,6 +18,7 @@ public class Map
         grid[xIndex, yIndex] = area;
     }
 
+    //out of bounds error handling for coordinate movement
     public IArea? GetArea(int x, int y)
     {
         int xIndex = x + 1;
@@ -39,5 +41,6 @@ public class Map
                y >= 0 && y < grid.GetLength(1);
     }
 }
+
 //Map class to hold areas in a grid layout
 //Allows adding and retrieving areas based on coordinates
