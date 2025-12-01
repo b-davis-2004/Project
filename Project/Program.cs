@@ -38,21 +38,37 @@ while (player.Health > 0)
     Console.Write("\nWhere do you want to go (N/W/S/E)? ");
     string? input = Console.ReadLine()?.Trim().ToUpper();
 
-    // allows player to quit the game with input
     if (input == "QUIT") break;
 
-    // handles player movement based on input
+    // Compute intended movement
+    int newX = player.X;
+    int newY = player.Y;
+
     switch (input)
     {
-        case "N": player.Y += 1; break;
-        case "W": player.Y -= 1; break;
-        case "S": player.X -= 1; break;
-        case "E": player.X += 1; break;
+        case "N": newY += 1; break;
+        case "S": newY -= 1; break;
+        case "E": newX += 1; break;
+        case "W": newX -= 1; break;
         default:
             Console.WriteLine("Invalid command. Use N/W/S/E or 'QUIT'.");
-            break;
+            continue;
     }
 
+    // Ask the map if the move is valid BEFORE applying it
+    var destination = world.GetArea(newX, newY);
+
+    if (destination == null)
+    {
+        Console.WriteLine("You cannot move that way. Choose another direction.");
+        continue;
+    }
+
+    // Move is valid → update coordinates
+    player.X = newX;
+    player.Y = newY;
+
+    Console.WriteLine($"You travel {input}.");
     Console.WriteLine($"Your current health: {player.Health}");
 }
 
