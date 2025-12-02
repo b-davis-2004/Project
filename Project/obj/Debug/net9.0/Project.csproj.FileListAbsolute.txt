@@ -27,3 +27,4 @@ C:\Users\briel\OneDrive - Robert Gordon University\CM2115\Project\Project\obj\De
 C:\Users\briel\OneDrive - Robert Gordon University\CM2115\Project\Project\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.Project.props
 C:\Users\briel\OneDrive - Robert Gordon University\CM2115\Project\Project\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.Project.props
 C:\Users\briel\OneDrive - Robert Gordon University\CM2115\Project\Project\obj\Debug\net9.0\staticwebassets.pack.json
+C:\Users\briel\OneDrive - Robert Gordon University\CM2115\Project\Project\obj\Debug\net9.0\rpswa.dswa.cache.json
