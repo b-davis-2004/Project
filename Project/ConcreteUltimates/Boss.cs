@@ -2,9 +2,12 @@ namespace Project;
 
 public class Boss : IUltimate
 {
-    public string Description => "A Wraith has appeared, a powerful foe - draining life and chilling the soul." +
-        "It's growling presence fills the air with dread, and its eyes burn with an otherworldly fire." + "It does not attack yet." + "Instead, it challenges you to solve a riddle: " +
-        "I’m light as a feather, yet the strongest person can’t hold me for much more than a minute.?";
+    public string Description =>
+        $"{Name} has appeared — a powerful foe draining life and chilling the soul.\n" +
+        "Its growling presence fills the air with dread, eyes burning with otherworldly fire.\n" +
+        "It does not attack yet. Instead, it challenges you with a riddle:\n" +
+        "I’m light as a feather, yet the strongest person can’t hold me for much more than a minute.";
+
     public bool IsResolved { get; set; } = false;
 
     public bool Resolve(Player player)
@@ -12,7 +15,7 @@ public class Boss : IUltimate
         Console.Write("Enter your answer: ");
         string? answer = Console.ReadLine()?.Trim().ToLower();
 
-        if (answer == "Breath")
+        if (answer == "breath")
         {
             IsResolved = true;
             Console.WriteLine("Correct! You have solved the puzzle.");
@@ -24,9 +27,11 @@ public class Boss : IUltimate
             return true;
         }
 
-        Console.WriteLine("Incorrect answer. Try again.");
-        player.Health -= 5; // Penalty for wrong answer
-        return false;
+            Console.WriteLine("\n Incorrect answer. The Wraith drains some of your strength.");
+            player.Health -= 5;
+            Console.WriteLine($"Your health is now {player.Health}.");
+            return false;
+
     }
     public string Name => "Wraith";
     public int Health { get; set; } = 50;
