@@ -2,6 +2,7 @@ namespace Project;
 
 public class Boss : IUltimate
 {
+    //puzzle logic half of the ultimate
     public string Description =>
         $"{Name} has appeared — a powerful foe draining life and chilling the soul.\n" +
         "Its growling presence fills the air with dread, eyes burning with otherworldly fire.\n" +
@@ -33,6 +34,8 @@ public class Boss : IUltimate
             return false;
 
     }
+
+    // Combat logic half of the ultimate
     public string Name => "Wraith";
     public int Health { get; set; } = 50;
 
@@ -42,6 +45,7 @@ public class Boss : IUltimate
 
     public bool IsDefeated => Health <= 0;
 
+    //handles enemy attack
     public void Attack(Player player)
     {
         Console.WriteLine($"{Name} attacks for {AttackPower} damage!");
